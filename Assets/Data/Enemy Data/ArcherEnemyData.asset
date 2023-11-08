@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902bb3227dd84a04c846609b8d99fbc9, type: 3}
+  m_Name: ArcherEnemyData
+  m_EditorClassIdentifier: 
+  damageHopSpeed: 6
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  movementSpeed: 4
+  minIdleTime: 1
+  maxIdleTime: 2
+  minAggrDistence: 7
+  maxAggrDistence: 8
+  chargeSpeed: 8
+  chargeTime: 1
+  longRangeActionTime: 0.5
+  amountOfTurn: 2
+  timeBetweenTurn: 0.75
+  closeRangeActionDis: 1.75
+  attackRadius: 0.75
+  attackDamage: 10
+  knockbackAngle: {x: 1, y: 1}
+  knockbackStrength: 7
+  stunTime: 2
+  stunKnockbackTime: 0.2
+  stunKnockbackSpeed: 20
+  stunKnockbackAngle: {x: 0, y: 0}
+  stunResistance: 3
+  stunRecoveryTime: 2
+  dodgeSpeed: 10
+  dodgeTime: 0.1
+  dodgeCooldown: 2
+  dodgeAngle: {x: 1, y: 1}
+  projectile: {fileID: 6939386048563935872, guid: fa5734675a0df0a419ee3ea708def55a, type: 3}
+  projectileDamage: 30
+  projectileSpeed: 15
+  projectileTravelDis: 10
