@@ -84,10 +84,6 @@ public class Player : MonoBehaviour
     }
     #endregion
 
-    #region Check Functions
-    
-    #endregion
-
     #region Other Function
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
     private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();

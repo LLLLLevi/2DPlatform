@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,6 +23,9 @@ public class PlayerInputHandler : MonoBehaviour
     public bool IfDashInputStop { get; private set; }
     public bool IfGrabInput { get; private set; }
     public bool[]  AttackInputs { get; private set; }   //Í¬Ê±´æ×ó¼ü¹¥»÷ºÍÓÒ¼ü¹¥»÷
+
+    bool isOpen = false;
+    [SerializeField] GameObject bag;
 
     [SerializeField]
     private float inputHoldTime = 0.3f;
@@ -149,6 +153,16 @@ public class PlayerInputHandler : MonoBehaviour
         {
             IfDashInput = false;
         }
+    }
+
+    public void OpenBag(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            isOpen = !isOpen;   //¸³·´Öµ
+            bag.SetActive(isOpen);
+        }
+
     }
 }
 

@@ -89,6 +89,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenBag"",
+                    ""type"": ""Button"",
+                    ""id"": ""2ef425e9-7e27-4b22-a2b7-89d346d7879b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +221,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""SecondAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f80eecc-35f1-4a0f-8ef2-43d91da735c3"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenBag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -227,6 +247,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_GamePlay_DashDirection = m_GamePlay.FindAction("DashDirection", throwIfNotFound: true);
         m_GamePlay_PrimaryAttack = m_GamePlay.FindAction("PrimaryAttack", throwIfNotFound: true);
         m_GamePlay_SecondAttack = m_GamePlay.FindAction("SecondAttack", throwIfNotFound: true);
+        m_GamePlay_OpenBag = m_GamePlay.FindAction("OpenBag", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -293,6 +314,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlay_DashDirection;
     private readonly InputAction m_GamePlay_PrimaryAttack;
     private readonly InputAction m_GamePlay_SecondAttack;
+    private readonly InputAction m_GamePlay_OpenBag;
     public struct GamePlayActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -304,6 +326,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @DashDirection => m_Wrapper.m_GamePlay_DashDirection;
         public InputAction @PrimaryAttack => m_Wrapper.m_GamePlay_PrimaryAttack;
         public InputAction @SecondAttack => m_Wrapper.m_GamePlay_SecondAttack;
+        public InputAction @OpenBag => m_Wrapper.m_GamePlay_OpenBag;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -334,6 +357,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @SecondAttack.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSecondAttack;
                 @SecondAttack.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSecondAttack;
                 @SecondAttack.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnSecondAttack;
+                @OpenBag.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnOpenBag;
+                @OpenBag.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnOpenBag;
+                @OpenBag.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnOpenBag;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -359,6 +385,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @SecondAttack.started += instance.OnSecondAttack;
                 @SecondAttack.performed += instance.OnSecondAttack;
                 @SecondAttack.canceled += instance.OnSecondAttack;
+                @OpenBag.started += instance.OnOpenBag;
+                @OpenBag.performed += instance.OnOpenBag;
+                @OpenBag.canceled += instance.OnOpenBag;
             }
         }
     }
@@ -372,5 +401,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnDashDirection(InputAction.CallbackContext context);
         void OnPrimaryAttack(InputAction.CallbackContext context);
         void OnSecondAttack(InputAction.CallbackContext context);
+        void OnOpenBag(InputAction.CallbackContext context);
     }
 }

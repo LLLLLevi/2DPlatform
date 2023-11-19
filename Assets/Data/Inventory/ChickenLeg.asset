@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22bdd457bcb489418d726fed55d47ba, type: 3}
+  m_Name: ChickenLeg
+  m_EditorClassIdentifier: 
+  itemName: ChickenLeg
+  itemImage: {fileID: 21300000, guid: b0851162516b6244f9ab7679cdb66512, type: 3}
+  itemHeldNum: 1
+  itemInfo: "\u7F8E\u5473\u9E21\u817F\uFF1A\n\u997F\u6C49\u6700\u7231\uFF01\u5403\u4E0B\u5B83\u56DE\u590D30\u70B9\u751F\u547D\u503C\uFF01"
+  type: 1
